@@ -1,5 +1,4 @@
 ﻿using MultiplayerARPG;
-using System.Collections;
 using UnityEngine;
 
 namespace Runningbird.Scripts
@@ -11,7 +10,10 @@ namespace Runningbird.Scripts
             // Update time of day percent while network active only
             if (Application.isPlaying && BaseGameNetworkManager.Singleton.IsNetworkActive)
             {
-                EnviroSkyMgr.instance.SetTimeOfDay(GameInstance.Singleton.DayNightTimeUpdater.TimeOfDay);
+                //Enviro 3
+                Enviro.EnviroManager.instance.Time.SetTimeOfDay(GameInstance.Singleton.DayNightTimeUpdater.TimeOfDay);
+                //Comment out the above line and uncomment the following if using Older Enviro Weather versions
+                //EnviroSkyMgr.instance.SetTimeOfDay(GameInstance.Singleton.DayNightTimeUpdater.TimeOfDay);
             }
 
         }
