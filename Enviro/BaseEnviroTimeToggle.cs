@@ -9,7 +9,7 @@ namespace Runningbird.Scripts
     {
         public float MorningStartingHour = 6;
         public float EveningStartingHour = 18;
-        public bool _isDayTime;
+        public bool _isNight;
         public float _timeOfDay;
 
         // Update is called once per frame
@@ -18,19 +18,11 @@ namespace Runningbird.Scripts
             _timeOfDay = GameInstance.Singleton.DayNightTimeUpdater.TimeOfDay;
         }
 
-        public bool IsDayTime()
+        public bool IsNight()
         {
+            _isNight = Enviro.EnviroManager.instance.isNight;
 
-            //Evening
-            if (_timeOfDay >= EveningStartingHour || _timeOfDay <= MorningStartingHour)
-            {
-                _isDayTime = false;
-            }
-            else //Daytime
-            {
-                _isDayTime = true;
-            }
-            return _isDayTime;
+            return _isNight;
         }
     }
 }

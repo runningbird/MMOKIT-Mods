@@ -14,6 +14,7 @@ namespace Runningbird.Scripts
                 Enviro.EnviroManager.instance.Time.SetTimeOfDay(GameInstance.Singleton.DayNightTimeUpdater.TimeOfDay);
                 //Comment out the above line and uncomment the following if using Older Enviro Weather versions
                 //EnviroSkyMgr.instance.SetTimeOfDay(GameInstance.Singleton.DayNightTimeUpdater.TimeOfDay);
+
             }
 
         }

@@ -24,14 +24,7 @@ namespace Runningbird.Scripts
             
             if (_light != null)
             {
-                if (IsDayTime())
-                {
-                    _light.enabled = false;
-                }
-                else
-                {
-                    _light.enabled = IsDayTime();
-                }
+                _light.enabled = IsNight();
             }
         }
     }

@@ -12,13 +12,14 @@ namespace Runningbird.Scripts
         public override void Update()
         {
             base.Update();
-            if (IsDayTime())
+            if (IsNight())
             {
-                gameObject.SetActive(_DayTimeEnabled);
+                gameObject.SetActive(_NightTimeEnabled);
             }
             else 
-            { 
-                gameObject.SetActive(_NightTimeEnabled);
+            {
+                gameObject.SetActive(_DayTimeEnabled);
+                
             }
             
         }
