@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Runningbird.Scripts
 {
-    public class EnviroLights : BaseEnviroTimeToggle
+    public class EnviroLightToggle: BaseEnviroTimeToggle
     {
         public Light _light;
 
@@ -18,10 +18,8 @@ namespace Runningbird.Scripts
         }
 
         // Update is called once per frame
-        public override void Update()
-        {
-            base.Update();
-            
+        void Update()
+        {            
             if (_light != null)
             {
                 _light.enabled = IsNight();
