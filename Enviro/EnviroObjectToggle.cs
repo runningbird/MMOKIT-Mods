@@ -8,17 +8,27 @@ namespace Runningbird.Scripts
     {
         public bool _DayTimeEnabled;
         public bool _NightTimeEnabled;
-        // Update is called once per frame
-        public override void Update()
+
+        private MeshRenderer _meshRenderer;
+
+        private void Start()
         {
-            base.Update();
+            _meshRenderer = GetComponent<MeshRenderer>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            
             if (IsNight())
             {
-                gameObject.SetActive(_NightTimeEnabled);
+                //Enable the MeshRenderer if it's night time and the _NightTimeEnabled property has been set to true
+                _meshRenderer.enabled = _NightTimeEnabled;
             }
             else 
             {
-                gameObject.SetActive(_DayTimeEnabled);
+                //Enable the MeshRenderer if it's Day time and the _DayTimeEnabled property has been set to true
+                _meshRenderer.enabled = _DayTimeEnabled;
                 
             }
             
